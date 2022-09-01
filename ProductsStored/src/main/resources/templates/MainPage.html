@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body{background-image: url("../img/bg.webp");background-repeat: no-repeat;background-size: cover;margin:0px;padding:0px}
+#super{display:flex;background-color: lightgrey}
+#super div img{height:35px;border-bottom-style: none;}
+#super div{margin:15px}
+*{font-size:15px;font-family: cursive; box-sizing: border-box;text-decoration: none}
+.bg-text {
+color:blue;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+border-radius:25px;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 35%;
+padding: 10px;
+text-align: center;
+background-color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-text">
+<table>
+    <thead>
+        <tr>
+            <th> product_id </th>
+            <th> Name </th>
+             <th> category_id </th>
+            <th> avaiable_quantity </th>
+             <th> Price </th>
+             <th> Select </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${user.empty}">
+            <td colspan="2"> No Product Available </td>
+        </tr>
+        <tr th:each="book : ${user}">
+            <td><h4 th:text="${book.product_id}"> </h4></td>
+            <td><h4 th:text="${book.name}"> </h4></td>
+            <td><h4 th:text="${book.category.category_id}"> </h4></td>
+            <td><h4 th:text="${book.avaiable_quantity}"> </h4></td>
+            <td><h4 th:text="${book.price}"> </h4></td>
+            <td><input th:type="radio" th:name="n1" th:value="${book.product_id}"></td>
+            </tr>
+    </tbody>
+</table>
+<form action="#" th:action="@{/bill}">
+<input type="submit" value="bill">
+</form>
+</div>
+
+</body>
+</html>

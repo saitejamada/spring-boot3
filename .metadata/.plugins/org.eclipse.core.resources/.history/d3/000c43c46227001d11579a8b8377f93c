@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/finaled}" th:object="${pay}">
+ 
+  <h1> User Register  Page</h1>
+  
+	<label for="id">UserID</label>
+    <input type="number" th:field="*{id}" id="name" placeholder="userid">
+    <br><br>
+    <label for="c">Customer name</label>
+    <input type="text" th:field="*{c.name}" id="name" placeholder="Name">
+    <label for="c">Customer Address</label>
+    <input type="text" th:field="*{c.address}" id="name" placeholder="address">
+    <label for="c">Customer Mobile Number</label>
+    <input type="text" th:field="*{c.mobile}" id="name" placeholder="MobileNo">
+    <br><br>
+    <label for="cl">email</label>
+    <input type="text" th:field="*{c.email}" id="name" placeholder="email">
+    <br><br>
+   <label for="payment_date">date Of Payment</label>
+    <input type="date" th:field="*{payment_date}" id="name" placeholder="date of birth">
+    <br><br>
+    <label for="amount">Amount</label>
+    <input type="text" th:field="*{amount}" id="name"  readonly>
+    <br><br>
+   
+    <input type="submit" value="Next">  
+    </form>
+
+</div>
+</body>
+</html>

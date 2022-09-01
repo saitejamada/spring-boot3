@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://thumbs.dreamstime.com/b/large-inventory-warehouse-goods-stock-logistic-shipping-banner-background-117615202.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+table td{padding: 3%}
+#super{height:fill;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color:hsl(95, 30%, 95%);}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/adduser}" th:object="${user}">
+ 
+  <h1> New User   </h1>
+  
+  <table>
+	<tr>
+	<th><label for="id">UserID</label></th>
+	<td><input type="number" th:field="*{id}" id="name" placeholder="userid"></td>
+	</tr>
+	<tr>
+	<th><label for="r">Role</label></th>
+	<td><select th:field="*{r.title}">
+     <option th:value="user" th:text="User"></option>
+    <option th:value="admin" th:text="Admin"></option>
+	</select>
+   	</td>
+	</tr>
+	<tr>
+	<th><label for="name">Name</label></th>
+	<td><input type="text" th:field="*{name}" id="name" placeholder="Name"></td>
+	</tr>
+    <tr>
+    <th><label for="email">Email</label></th>
+    <td><input type="text" th:field="*{email}" id="name" placeholder="email"></td>
+    </tr>
+    <tr>
+    <th><label for="dob">Date Of Birth</label></th>
+    <td><input type="date" th:field="*{dob}" id="name" placeholder="date of birth"></td>
+    </tr>
+    <tr>
+    <th><label for="address">Address</label></th>
+    <td><input type="text" th:field="*{address}" id="name" placeholder="address"></td>
+    </tr>
+    <tr></tr>
+    <tr>
+    <th></th>
+    <td><input type="submit" value="Next"> </td>
+    </tr>
+    </table>
+    </form>
+
+</div>
+</body>
+</html>

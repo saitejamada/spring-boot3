@@ -1,0 +1,24 @@
+package com.invertery.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.invertery.model.Supplier;
+import com.invertery.repository.SupplierRepository;
+
+@Service
+public class SupplierService {
+
+	@Autowired
+	SupplierRepository sr;
+	
+	public void saveSupplier(Supplier s) {
+		sr.save(s);
+	}
+	public Supplier getSupplier(int id) {
+		return sr.findById(id).get();
+	}
+	public Supplier findSupByUserName(String name) {
+		return sr.findByUserName(name);
+	}
+}

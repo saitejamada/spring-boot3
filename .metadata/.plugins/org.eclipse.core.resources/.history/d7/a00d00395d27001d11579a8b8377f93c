@@ -1,0 +1,21 @@
+package com.invertery.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.invertery.model.Stock;
+import com.invertery.repository.StockRepository;
+
+@Service
+public class StockService {
+
+	@Autowired
+	StockRepository sr;
+	
+	public void saveStock(Stock s) {
+		sr.save(s);
+	}
+	public Stock getStock(int id) {
+		return sr.findById(id).get();
+	}
+}

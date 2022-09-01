@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color:lavender }
+div{margin-left:30%;margin-top:15%;}
+</style>
+</head>
+<body>
+<div>
+<form action="#" th:action="@{/addpicture}"  method="post" th:object="${reg}"  enctype="multipart/form-data">
+<label>Add Display Picture</label>
+<input type="file" th:field="*{image}"  id="image">
+<input type="hidden"  id="cs" placeholder="username" th:field="*{cs}" accept="image/png, image/jpeg,image/jpg">
+<input type="submit" value="submit">
+</form>
+</div>
+</body>
+</html>

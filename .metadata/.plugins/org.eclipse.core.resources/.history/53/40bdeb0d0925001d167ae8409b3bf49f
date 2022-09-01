@@ -1,0 +1,5 @@
+package com.invertery.repository;
+
+public interface Inventory {
+
+}

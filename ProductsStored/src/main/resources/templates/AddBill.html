@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#super{display:flex;background-color: lightgrey}
+#super div{margin:10px}
+body{background:url("../img/bg.webp"); background-repeat:no-repeat;background-size:cover; margin:0px;padding:0px}
+*{font-size:15px;font-family: cursive; box-sizing: border-box;text-decoration: none}
+.bg-text {
+color:blue;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+border-radius:25px;
+position: absolute;
+top: 48%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 35%;
+padding: 10px;
+text-align: center;
+background-color: white;
+}
+p{color:black;}
+</style>
+</head>
+<body>
+<div class="bg-text">
+<form action="#" th:action="@{/addbill}" th:object="${bill}">
+ 
+  <h1>Adding Bill page</h1>
+  
+	<label for="billno">billno</label>
+    <input type="number" th:field="*{billno}" id="name" placeholder="billno">
+    <br><br>
+    <label for="user">User</label>
+    <input type="number" th:field="*{user.user_id}" id="aadharnumber" placeholder="userid">
+    <br><br>
+    <label for="product">product</label>
+    <input type="number" th:field="*{product.product_id}" id="aadharnumber" placeholder="product_id">
+    <br><br>
+    <label for="select_quantity">select_quantity</label>
+    <input type="number" th:field="*{select_quantity}" id="aadharnumber" placeholder="select_quantity">
+    <br><br>
+   
+   <input type="submit" value="Submit">  
+   <br><br><br>
+   <p th:text="${msg}"></p>
+ </form>
+
+ </div>
+
+</body>
+</html>

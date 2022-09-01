@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+
+</style>
+</head>
+<body>
+<div id="super">
+
+<form action="#" th:action="@{/role}" th:object="${reg}">
+ 
+  <h1>Adding Role page</h1>
+  
+	<label for="role_title">role_title</label>
+    <input type="text" th:field="*{role_title}" id="name" placeholder="role_title">
+    <br><br>
+    <label for="role_title">role_description</label>
+    <input type="text" th:field="*{role_description}" id="aadharnumber" placeholder="role_description">
+    <br><br>
+   <input type="submit" value="Next">  
+   <br><br><br>
+   <p th:text="${msg}"></p>
+ </form>
+
+
+
+</div>
+</body>
+</html>

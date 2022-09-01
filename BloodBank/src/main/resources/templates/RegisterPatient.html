@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/addpatient}" th:object="${pat}">
+ 
+  <h1> Patient Details</h1>
+  
+	<label for="title">name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name">
+    <br><br>
+    <label for="mobileno">mobileno</label>
+    <input type="text" th:field="*{mobileno}" id="name" placeholder="mobileno">
+    <br><br>
+    <label for="address">address</label>
+    <input type="text" th:field="*{address}" id="name" placeholder="address">
+    <br><br>
+    <label for="email">email</label>
+    <input type="text" th:field="*{email}" id="name" placeholder="email">
+    <br><br>
+    <label for="blood">blood</label>
+    <input type="text" th:field="*{blood}" id="name" placeholder="blood">
+    <br><br>
+    <label for="type">type</label>
+    <input type="text" th:field="*{type}" id="name" placeholder="type">
+    <br><br>
+    <input type="submit" value="Next">  
+    </form>
+
+</div>
+</body>
+</html>

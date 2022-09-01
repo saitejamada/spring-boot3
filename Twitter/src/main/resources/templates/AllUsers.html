@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lavender;}
+*{font-family: cursive;font-size:15px}
+#super{margin-top:10%;margin-left:10%}
+
+</style>
+</head>
+<body>
+<div id="super">
+<h1> user Details</h1>
+<table border=5px>
+<tr>
+<th>username</th>
+<th>action</th>
+</tr>
+<tr th:each="reg : ${list}">
+<td th:text="${reg.username}"></td>
+</tr>
+</table>
+</div>	
+</body>
+</html>

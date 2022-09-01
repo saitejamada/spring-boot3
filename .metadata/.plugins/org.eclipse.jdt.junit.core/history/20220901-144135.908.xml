@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="InventaryManagementMockito" project="InvertaryManagement" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="com.invertery.InventaryManagementMockito" time="0.219" displayname="InventaryManagementMockito" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]">
+    <testcase name="testInventoryNullPointer" classname="com.invertery.InventaryManagementMockito" time="0.039" displayname="testInventoryNullPointer()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testInventoryNullPointer()]"/>
+    <testcase name="testInventorySave" classname="com.invertery.InventaryManagementMockito" time="0.065" displayname="testInventorySave()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testInventorySave()]"/>
+    <testcase name="testInventoryType" classname="com.invertery.InventaryManagementMockito" time="0.015" displayname="testInventoryType()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testInventoryType()]"/>
+    <testcase name="testInventoryUpdateInventory" classname="com.invertery.InventaryManagementMockito" time="0.017" displayname="testInventoryUpdateInventory()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testInventoryUpdateInventory()]"/>
+    <testcase name="testInventoryTypeNull" classname="com.invertery.InventaryManagementMockito" time="0.021" displayname="testInventoryTypeNull()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testInventoryTypeNull()]"/>
+    <testcase name="testCustomerGetById" classname="com.invertery.InventaryManagementMockito" time="0.011" displayname="testCustomerGetById()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testCustomerGetById()]"/>
+    <testcase name="testInventoryGetById" classname="com.invertery.InventaryManagementMockito" time="0.011" displayname="testInventoryGetById()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testInventoryGetById()]"/>
+    <testcase name="testCustomerSave" classname="com.invertery.InventaryManagementMockito" time="0.012" displayname="testCustomerSave()" uniqueid="[engine:junit-jupiter]/[class:com.invertery.InventaryManagementMockito]/[method:testCustomerSave()]"/>
+  </testsuite>
+</testrun>

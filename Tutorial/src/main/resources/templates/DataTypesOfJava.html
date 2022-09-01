@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tutorial Point</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+column middle pre{font-size:medium;font-family:sans-serif;}
+
+body {
+  margin: 0;font-size:medium;font-family:sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%; background-color: #f1f1f1;text-align: justify;
+}
+
+.column.side img {height:200px;}
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Tutorial Point</h1>
+  <p>Education is the ability to listen to almost anything without losing your temper or your self-confidence.</p>
+</div>
+
+<div class="topnav">
+  <a th:href="@{/home}">Java</a>
+  <a th:href="@{/python}">Python</a>
+  <a href="#">JavaScript</a>
+  <a href="#">Css</a>
+  <a href="#">Bootstrap</a>
+</div>
+
+<div class="row">
+  <div class="column side">
+    <h2>Topics</h2>
+    <a th:href="@{/Introduction}">Introduction</a>
+    <br><br>
+  <a href="#">Datatypes</a>
+  <br><br>
+  <a href="#">Keywords</a>
+  <br><br>
+  <a th:href="@{/inheritance}">Inheritance</a>
+  <br><br>
+  <a href="#">Abstraction</a>
+  <br><br>
+  <a href="#">Polymorphism</a>
+  
+  <br><br>
+  <a href="#">Servlets</a>
+  
+  <br><br>
+  <a href="#">jsp</a>
+  
+  <br><br>
+  <a href="#">String</a>
+  <br><br>
+  
+  <a href="#">File Handling</a>
+  
+   <br><br>
+  <a href="#">streams</a>
+  <br><br>
+  <a href="#">Polymorphism</a>
+  <br><br>
+  <a href="#">DataBase Access</a>
+  <br><br>
+  <a href="#">Network</a>
+  <br><br>
+  <a href="#">Multi threading</a>
+  
+  <br><br>
+  <a href="#">Gui programming</a>
+  
+  <br><br>
+  <a href="#">Sample Programs</a>
+  
+  <br><br>
+  <a href="#">Quick Guide</a>
+  
+  <br><br>
+  <a href="#">Tools</a>
+  
+  <br><br>
+  <a href="#">Community</a>
+  
+  <br><br>
+  <a href="#">Discussion</a>
+  
+  <br><br>
+  <a href="#">Mock</a>
+  
+  <br><br>
+  <a href="#">Books</a>
+  
+  
+  <br>
+  <p>more</p>
+  </div>
+  
+  <div class="column middle">
+    <h2>Data Types in Java</h2>
+    <p>Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java:<br><br>
+In Java, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+<br>
+Primitive data types: The primitive data types include boolean, char, byte, short, int, long, float and double.
+<br>Non-primitive data types: The non-primitive data types include Classes, Interfaces, and Arrays.<br><br>
+    <h2>Java Data Types</h2>
+    <img th:src="@{/img/1.png}"  style="width:500px;height:500px; float: center;">
+
+  </div>
+   
+  <div class="column side">
+    <h2>Adds</h2>
+    <img alt="" th:src="@{/img/java-training.png}">
+    <br><br>
+    <img alt="" th:src="@{/img/add1.webp}">
+    <img alt="" th:src="@{/img/facebook-ad-example.jpg}">
+    
+  </div>
+</div>
+
+<div class="footer">
+  <h4>Copy Rights Reserved @ 2020 </h4>
+</div>
+  
+</body>
+</html>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color:lavender }
+div{margin-left:30%;margin-top:15%;}
+</style>
+</head>
+<body>
+<div>
+<h1>User Form</h1>
+<form action="#" th:action="@{/adddetails}" th:object="${reg}">
+<table>
+<tr>
+<td><input type="hidden" placeholder="username" th:field="*{cs}"></td>
+</tr>
+<tr>
+<th>tweets</th>
+<td><input type="number" placeholder="tweets" th:field="*{tweets}"></td>
+</tr>
+
+<tr>
+<th>Followers</th>
+<td><input type="number" placeholder="followers" th:field="*{followers}"></td>
+</tr>
+<tr>
+<th>following</th>
+<td><input type="number" placeholder="following" th:field="*{following}"></td>
+</tr>
+<tr>
+<th><input type="submit" value="submit"></th>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

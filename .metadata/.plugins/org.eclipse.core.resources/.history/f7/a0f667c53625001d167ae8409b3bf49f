@@ -1,0 +1,22 @@
+package com.invertery.service;
+
+import javax.persistence.Entity;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.invertery.model.Role;
+import com.invertery.repository.RoleRepository;
+
+@Entity
+public class RoleService {
+
+	@Autowired
+	RoleRepository rp;
+	
+	public void saveRepository(Role r) {
+		rp.save(r);
+	}
+	public Role getRole(int id) {
+		return rp.findById(id).get();
+	}
+}

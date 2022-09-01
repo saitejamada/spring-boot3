@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lightgrey}
+*{font-family: cursive;font-size:15px}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+input {margin:7px;border-radius:5px}
+#btn {margin-left: 39%}
+h1{text-align: center}
+p{color:red}
+label, input, span, select {
+display: table-cell;
+margin: 5px;
+text-align: left;
+}
+
+</style>
+</head>
+<body>
+
+<div id="super">
+
+<form action="#" th:action="@{/validateuser}"  method="post"    th:object="${us}">
+<h1>login Form</h1>
+<p th:text="${msg}"></p>
+
+<label>User Name</label>
+<input type="text"  th:field="*{userName}"/><br/>
+<label>User password</label>
+<input type="password"  th:field="*{password}"/><br/>
+
+<a th:href="@{reguser}">Sign up</a><br/>
+
+<input  id= "btn" type="submit" value="submit">
+<input type="reset" value="cancel">
+
+
+</form>
+
+
+</div>
+</body>
+</html>

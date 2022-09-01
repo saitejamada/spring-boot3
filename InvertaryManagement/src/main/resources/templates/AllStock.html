@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://thumbs.dreamstime.com/b/large-inventory-warehouse-goods-stock-logistic-shipping-banner-background-117615202.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+table td{padding: 4%}
+ table tr th{padding-left:4%;}
+#super{height:fill;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: hsl(95, 30%, 95%);}
+pre{font-size: 20px;font-family:sans-serif;}
+</style>
+
+</head>
+<body>
+
+<div id="super">
+<h1>Products Available</h1>
+      	<div th:if="${not#lists.isEmpty(list)}">
+          <table>
+            <tr>
+              <th>Decription</th>
+              <th>StockNumber</th>
+              <th>Type</th>
+              <th>Items</th>
+              <th>Price</th>
+              <th>Select</th>
+            </tr>
+            <tr th:each="product : ${list}">
+              <td th:text="${product.decription}"></td>
+              <td th:text="${product.stock_number}"></td>
+              <td th:text="${product.type}"></td>
+              <td th:text="${product.items}"></td>
+               <td th:text="${product.price}"></td>
+               <td><a th:href="@{/gopayment/{id}(id=${product.id})}">Select</a></td>
+            </tr>
+          </table>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color: lightgrey}
+*{font-family: cursive;font-size:22px}
+#super{display: flex}
+</style>
+</head>
+<body>
+<h1>Hello MR.</h1>
+<p th:text="${#session.getAttribute('name')}"></p>
+<div id="super">
+<div>
+<form action="viewall">
+<input type="submit" value="viewallEmp">
+</form>
+</div>
+<div>
+<form action="viewUsers">
+<input type="submit" value="viewallusers">
+</form>
+</div>
+<div>
+<form action="login">
+<input type="submit" value="logout">
+</form>
+</div>
+
+</div>
+</body>
+</html>

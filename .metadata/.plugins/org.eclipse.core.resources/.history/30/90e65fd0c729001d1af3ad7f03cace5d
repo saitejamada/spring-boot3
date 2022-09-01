@@ -1,0 +1,95 @@
+package com.invertery;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.invertery.model.*;
+
+@SpringBootTest
+class InvertaryManagementApplicationTests {
+
+	Customer cust;
+	Inventory inv=new  Inventory("New Inventory","2211","goods","food");;
+	Payment pay=new Payment(cust, "768", "food", new java.sql.Date(2022, 2, 22));
+	Role r=new Role("user", "all user roles");
+	Stock s;
+	Supplier sup;
+	User u;
+	
+	
+	@Test
+	void contextLoads() {
+		
+	}
+	@Test
+	void testCustomer() {
+		cust=new Customer("sai", "98798798", "sai@abc.com", "sai@19", "iugaid78", "jbvj");
+		assertTrue(cust.getName().equals("sai"));
+	}
+	@Test
+	void testCustometNull() {
+		assertNull(cust);
+	}
+	@Test
+	void testCustomerNotEqulas() {
+		cust=new Customer("sai", "98798798", "sai@abc.com", "sai@19", "iugaid78", "jbvj");
+		Customer c=new Customer("saasd", "07897", "saib@abc.com", "sai@19", "bknkj78", "jn,l");
+		assertNotEquals(cust, c);
+	}
+	@Test
+	void testCustomerEquals() {
+		cust=new Customer("sai", "98798798", "sai@abc.com", "sai@19", "iugaid78", "jbvj");
+		assertEquals(cust, cust);
+	}
+	@Test
+	void testInventory() {
+		inv=new  Inventory("New Inventory","2211","goods","food");
+		assertNotNull(inv);
+	}
+	@Test
+	void testInventoryId(){
+		
+		assertTrue("2211".equals(inv.getInventory_number()));
+	}
+
+	@Test
+	void testInventoryDescription() {
+		assertTrue("goods".equals(inv.getType()));
+	}
+	@Test
+	void testInventoryType() {
+		assertTrue("food".equals(inv.getItems()));
+	}
+	@Test
+	void testPaymnet() {
+		assertNotNull(pay);
+	}
+	@Test
+	void testPaymnetCustomer() {
+		assertEquals(cust, pay.getC());
+	}
+	@Test
+	void testPaymentAmount() {
+		assertEquals("768", pay.getAmount());
+	}
+	@Test
+	void testRole() {
+		assertNotNull(r);
+	}
+	@Test
+	void testRoleTitle() {
+		assertEquals("user", r.getTitle());
+	}
+	@Test
+	void tetsRoleDescription() {
+		assertEquals("all user roles", r.getDescription());
+	}
+}

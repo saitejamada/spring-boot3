@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://thumbs.dreamstime.com/b/large-inventory-warehouse-goods-stock-logistic-shipping-banner-background-117615202.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: hsl(95, 30%, 95%);}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/finaled}" th:object="${pay}">
+ 
+  <h1> Payment  Page</h1>
+  
+  <table>
+  <tr>
+	<th><label for="c">Name</label></th>
+	<td><input type="text" th:field="*{c.name}" id="name" placeholder="Name">
+    </td></tr>
+    <tr>
+    <th><label for="c">Address</label></th>
+    <td><input type="text" th:field="*{c.address}" id="name" placeholder="address"></td>
+    </tr>
+    <tr>
+    <th><label for="c">Mobile Number</label></th>
+    <td><input type="text" th:field="*{c.mobile}" id="name" placeholder="MobileNo"></td>
+    </tr>
+    <tr>
+    <th><label for="cl">Email</label></th>
+    <td><input type="text" th:field="*{c.email}" id="name" placeholder="email"></td>
+    </tr>
+    <tr>
+    <th><label for="payment_date">date Of Payment</label></th>
+    <td> <input type="date" th:field="*{payment_date}" id="name" placeholder="date of birth"></td>
+    </tr>
+    <tr>
+    <th> <label for="amount">Amount</label></th>
+    <td> <input type="text" th:field="*{amount}" id="name"  readonly></td>
+    </tr>
+    <tr></tr>
+   <tr>
+   <th>  </th>
+   <td><input type="submit" value="Next"> </td>
+   </tr>
+   </table>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+package com.invertery.model;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Inventory {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	String decription;
+	String inventory_number;
+	@OneToMany(cascade = CascadeType.ALL)
+	List<Stock> s;
+	String type;
+	String items;
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	public List<Stock> getS() {
+		return s;
+	}
+
+	public void setS(List<Stock> s) {
+		this.s = s;
+	}
+
+	public String getDecription() {
+		return decription;
+	}
+	public void setDecription(String decription) {
+		this.decription = decription;
+	}
+	
+	public String getInventory_number() {
+		return inventory_number;
+	}
+	public void setInventory_number(String inventory_number) {
+		this.inventory_number = inventory_number;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getItems() {
+		return items;
+	}
+	public void setItems(String items) {
+		this.items = items;
+	}
+	public Inventory(String decription, String number, String type, String items) {
+		super();
+		this.decription = decription;
+		this.inventory_number = number;
+		this.type = type;
+		this.items = items;
+	}
+	public Inventory() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "Inventory [id=" + id + ", decription=" + decription + ", inventory_number=" + inventory_number + ", stock="
+				+ s + ", type=" + type + ", items=" + items + "]";
+	}
+	
+	
+	
+}

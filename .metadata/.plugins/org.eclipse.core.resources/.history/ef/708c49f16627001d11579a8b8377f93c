@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://thumbs.dreamstime.com/b/large-inventory-warehouse-goods-stock-logistic-shipping-banner-background-117615202.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;width:550px;margin-top:15%;margin-left:32%;border-radius: 5px;background-color:hsl(95, 30%, 95%) ;}
+table td{padding: 20%}
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/validateuser}" th:object="${log}">
+ 
+  <h1>Login page</h1>
+  <table>
+  <tr>
+  <th><label for="userid">userId</label></th>
+  <td><input type="text" th:field="*{userid}" id="name" placeholder="userid"></td>
+  </tr>
+	<tr></tr>
+	<tr>
+	<th><label for="password">Password</label></th>
+	<td><input type="text" th:field="*{password}" id="aadharnumber" placeholder="password">
+    </td>
+	</tr>
+    
+    <tr>
+    <th></th>
+    <td><input type="submit" value="Next"/><a th:href="@{/reguser}">signup</a>  
+   </td>
+    </tr>
+   
+ </table>
+ </form>
+
+</div>
+</body>
+</html>

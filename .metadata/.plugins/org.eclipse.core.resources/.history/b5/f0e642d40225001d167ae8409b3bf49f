@@ -1,0 +1,5 @@
+package com.invertery.model;
+
+public class Stock {
+
+}

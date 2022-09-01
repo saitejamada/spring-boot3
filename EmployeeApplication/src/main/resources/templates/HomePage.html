@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-color:lavender}
+*{font-family: cursive;font-size:15px}
+#super{height:fill;width:auto;color:black;margin-top:7%;margin-left:7%;border-radius: 5px;background-color:ghostwhite;}
+input {margin:7px;border-radius:5px}
+#btn {margin-left: 39%}
+h1{text-align: center}
+#super table th {padding:15px}
+#super table td {padding-left:25px}
+p{color:blue;font-size:17px;margin-left: 35%}
+table{margin-left: 35%;}
+</style>
+</head>
+<body>	
+<div id="super">
+<p> Hello Mr.</p><p th:text="${#session.getAttribute('name')}"></p>
+<table>
+<tr>
+<th>employeeid : </th>
+<td th:text="${reg.employeeId}"></td>
+</tr>
+<tr>
+<th>name : </th>
+<td th:text="${reg.name}"></td>
+</tr>
+<tr>
+<th>address : </th>
+<td th:text="${reg.address}"></td>
+</tr>
+<tr>
+<th>mobileno : </th>
+<td th:text="${reg.mobileNumber}"></td>
+</tr>
+<tr>
+<th>email : </th>
+<td th:text="${reg.email}"></td>
+</tr>
+<tr>
+<th>salary : </th>
+<td th:text="${reg.salary}"></td>
+</tr>
+<tr>
+<th>action : </th>
+<td>
+<a th:href="@{/update/{employeeId}(employeeId=${reg.employeeId})}">Edit</a>
+</td>
+</tr>
+<tr>
+<th><a th:href="@{login}">logout</a></th>
+</tr>
+</table>
+
+</div>
+</body>
+</html>

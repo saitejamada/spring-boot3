@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tutorial Point</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;font-size:medium;font-family:sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%; background-color: #f1f1f1;text-align: justify;height:90%;
+}
+
+.column.side img {height:200px;}
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Tutorial Point</h1>
+  <p>Education is the ability to listen to almost anything without losing your temper or your self-confidence.</p>
+</div>
+
+<div class="topnav">
+ <a th:href="@{/home}">Java</a>
+  <a th:href="@{/python}">Python</a>
+  <a href="#">JavaScript</a>
+  <a href="#">Css</a>
+  <a href="#">Bootstrap</a>
+</div>
+
+<div class="row">
+  <div class="column side">
+    <h2>Topics</h2>
+    <a th:href="@{/Introduction}">Introduction</a>
+    <br><br>
+  <a href="#">Datatypes</a>
+  <br><br>
+  <a href="#">Keywords</a>
+  <br><br>
+  <a href="#">Classes and objects</a>
+  <br><br>
+  <a href="#">Reg expression</a>
+  <br><br>
+  <a href="#">Cgi programming</a>
+  <br><br>
+  <a href="#">DataBase Access</a>
+  <br><br>
+  <a href="#">Network</a>
+  <br><br>
+  <a href="#">Multi threading</a>
+  
+  <br><br>
+  <a href="#">Gui programming</a>
+  
+  <br><br>
+  <a href="#">Sample Programs</a>
+  
+  <br><br>
+  <a href="#">Quick Guide</a>
+  
+  <br><br>
+  <a href="#">Tools</a>
+  
+  <br><br>
+  <a href="#">Community</a>
+  
+  <br><br>
+  <a href="#">Discussion</a>
+  
+  <br><br>
+  <a href="#">Mock</a>
+  
+  <br><br>
+  <a href="#">Books</a>
+  
+  </div>
+  
+  <div class="column middle">
+    <h2>What is Python ?</h2>
+    <p>Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It was created by Guido van Rossum during 1985- 1990. Like Perl, Python source code is also available under the GNU General Public License (GPL). This tutorial gives enough understanding on Python programming language.</p>
+    <h2>Sample Program</h2>
+    <p>print ("Hello, Python!");</p>
+
+<h2>Why to Learn Python?</h2>
+<p>
+Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable. It uses English keywords frequently where as other languages use punctuation, and it has fewer syntactical constructions than other languages.
+<br><br>
+Python is a MUST for students and working professionals to become a great Software Engineer specially when they are working in Web Development Domain. I will list down some of the key advantages of learning Python:
+<br><br>
+Python is Interpreted − Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.
+<br><br>
+Python is Interactive − You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.
+<br><br>
+Python is Object-Oriented − Python supports Object-Oriented style or technique of programming that encapsulates code within objects.
+<br><br>
+Python is a Beginner's Language − Python is a great language for the beginner-level programmers and supports the development of a wide range of applications from simple text processing to WWW browsers to games.
+</p>
+</div>
+   
+  <div class="column side">
+    <h2>Adds</h2>
+    <img alt="" th:src="@{/img/java-training.png}">
+     <br><br>
+    <img alt="" th:src="@{/img/add1.webp}">
+    
+    <img alt="" th:src="@{/img/facebook-ad-example.jpg}">
+    
+  </div>
+</div>
+  <div class="footer">
+  <h4>Copy Rights Reserved @ 2020 </h4>
+</div>
+</body>
+</html>
+
+

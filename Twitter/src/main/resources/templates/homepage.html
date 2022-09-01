@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Twitter</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-family: Arial;margin:0px;
+  padding: 0px;
+  background:powderblue;
+}
+
+
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: deepskyblue;
+  color: white;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;border:medium;border-style:solid;Background-color:lavender;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position:relative;
+  top: 145px;
+  left: 0;
+  border: 1px black solid;
+  border-radius: 50%;
+  width:200px;height:130px;
+}
+.image2 {
+  position: absolute;
+  top: 0px;
+  left:0px;
+  border: 1px green solid;
+  width:350px;
+  height:170px;
+}
+pre{font-family: Arial;font-weight:bold;}
+
+.data{color:blue;font-weight:bold;padding-left:15px;}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="#">Moments</a>
+  <a href="#">Notification</a>
+  <a href="#">Messages</a>
+  <a th:href="@{login}">logout</a>
+  <button style="float:right;border-radius:15px;background-color:deepskyblue;height:30px;width:90px;color:white;font-size:15px;font-weight: bold; margin-top:7px;margin-right:50px;">Tweet</button>
+</div>
+
+<div class="row">
+  <div class="column side">
+  <div class="parent">
+  <img class="image2" src="https://live.staticflickr.com/63/168900480_664e2b98d9_c.jpg" />
+  <img class="image1" th:src="@{'data:image/*;base64,'+${image1}}" style="width:200px" alt="@{/img/avatar.webp}"/>
+  </div>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  <table>
+  <tr>
+  <td th:text="${reg.cs.username}" style="font-weight: bold"></td>
+  </tr>
+  <tr></tr>
+  <tr>
+  <th>Tweets</th>
+  <th>Following</th>
+  <th>Followers</th>
+  </tr>
+  <tr>
+  <td class="data" th:text="${reg.tweets}"></td>
+  <td class="data" th:text="${reg.following}"></td>
+  <td  class="data" th:text="${reg.followers}"></td>
+  </tr>
+  </table>
+   <form action="#" th:action="@{/pic/{username}(username=${reg.cs.username})}">
+  <input type="submit" value="addDp">
+  </form>
+  </div>
+  
+  <div class="column middle">
+  <table>
+  <tr th:each="r : ${list}">
+  <th><img th:src="@{'data:image/*;base64,'+${image1}}" style="width:90px;float:left;border-radius: 50%"/></th>
+  <th th:text="${r.cs.username}"></th>
+  <th></th><th></th><th></th>
+  <th th:text="${r.post}"></th>
+  </tr>
+  </table>
+  <form action="#" th:action="@{/po/{username}(username=${reg.cs.username})}">
+  <input type="submit" value="addpost">
+  </form>
+  </div>
+  
+  <div class="column side">
+    <h3>Who To Follow</h3>
+    <img src="https://i.pinimg.com/originals/1c/7c/11/1c7c117a12a64b1e21e5cbf003a0147a.jpg" style="height:100px;width:100px;float:left;border-radius: 50%;"/>
+  <pre> 
+  PavanKalyan @iamPSPk 
+  </pre>
+  <button style="border-radius:25px;background-color:white;height:25px;width:90px;color:white;font-size:15px;font-weight: bold"><a href="">Follow</a></button>
+  <br/><br/>
+  <img src="https://www.tvguide.com/a/img/resize/b7cc90b7d0b167151e2776582b2e6e7aa242ccd1/catalog/provider/10/9/10-369DA70C-AE65-44FB-ABAB-B6F0E1F14313.png?auto=webp&fit=crop&height=300&width=200" style="height:100px;width:100px;float:left;border-radius: 50%;"/>
+  <pre> 
+  Joseph Morgan @josephmorgan 
+  </pre>
+  <button style="border-radius:25px;border-color:deepskyblue;background-color:white;height:25px;width:90px;color:deepskyblue;font-size:15px;font-weight: bold"><a href="">Follow</a></button>
+  
+  </div>
+</div>
+
+</body>
+</html>

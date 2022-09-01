@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/adduser}" th:object="${user}">
+ 
+  <h1> User Register  Page</h1>
+  
+	<label for="id">UserID</label>
+    <input type="number" th:field="*{id}" id="name" placeholder="userid">
+    <br><br>
+    <label for="r">r</label>
+    <select th:field="*{r.title}">
+    <option th:value="admin" th:text="Admin"></option>
+    <option th:value="user" th:text="User"></option>
+	</select>
+    <br><br>
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <br><br>
+    <label for="email">email</label>
+    <input type="text" th:field="*{email}" id="name" placeholder="email">
+    <br><br>
+    <label for="dob">date Of Joining</label>
+    <input type="date" th:field="*{dob}" id="name" placeholder="date of birth">
+    <br><br>
+    <label for="address">Address</label>
+    <input type="text" th:field="*{address}" id="name" placeholder="address">
+    <br><br>
+    <input type="submit" value="Next">  
+    </form>
+
+</div>
+</body>
+</html>

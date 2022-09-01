@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+pre{font-size: 20px;font-family:sans-serif;}
+</style>
+
+</head>
+<body>
+
+<div id="super">
+      	<div th:if="${not#lists.isEmpty(list)}">
+          <table>
+            <tr>
+              <th>Id</th>
+              <th>decription</th>
+              <th>stock_number</th>
+              <th>type</th>
+              <th>items</th>
+              <TH>Select</TH>
+            </tr>
+            <tr th:each="product : ${list}">
+              <td th:text="${product.id}"></td>
+              <td th:text="${product.decription}"></td>
+              <td th:text="${product.stock_number}"></td>
+               <td th:text="${product.items}"></td>
+               <td><a th:href="@{/finaled}">Select</a></td>
+            </tr>
+          </table>
+        </div>
+</div>
+</body>
+</html>

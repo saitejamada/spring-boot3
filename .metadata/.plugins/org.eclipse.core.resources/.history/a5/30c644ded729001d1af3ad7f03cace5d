@@ -1,0 +1,125 @@
+package com.invertery;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.invertery.model.Customer;
+import com.invertery.model.Inventory;
+import com.invertery.model.Payment;
+import com.invertery.model.Role;
+import com.invertery.model.Stock;
+import com.invertery.service.*;
+
+
+
+
+@SpringBootTest
+public class InventaryManagementMockito {
+
+	CustomerService c=Mockito.mock(CustomerService.class);
+	InventoryService is=Mockito.mock(InventoryService.class);
+	PaymentService ps=Mockito.mock(PaymentService.class);
+	PermissionService perser=Mockito.mock(PermissionService.class);
+	RoleService rs=Mockito.mock(RoleService.class);
+	StockService ss=Mockito.mock(StockService.class);
+	Customer cust=new Customer("sai", "98798798", "sai@abc.com", "sai@19", "iugaid78", "jbvj");
+	Inventory inv=new  Inventory("New Inventory","2211","goods","food");
+	Payment pay=new Payment(cust, "768", "food", new java.sql.Date(2022, 2, 22));
+	Role r=new Role("user", "all user roles");
+	Stock s=new Stock("goods", "99","wheat", "30",70);;
+	
+	@Test
+	void testCustomerSave() {
+		when(c.saveCustomer(cust)).thenReturn(cust);
+		assertEquals(c.saveCustomer(cust), cust);
+	}
+	@Test
+	void testCustomerGetById() {
+		when(c.getCustomer(0)).thenReturn(cust);
+		assertEquals(c.getCustomer(0), cust);
+	}
+	@Test
+	void testInventorySave() {
+		when(is.saveInventory(inv)).thenReturn(inv);
+		assertEquals(is.saveInventory(inv), inv);
+	}
+	@Test
+	void testInventoryGetById() {
+		when(is.getInventory(0)).thenReturn(inv);
+		assertEquals(is.getInventory(0), inv);
+	}
+	@Test
+	void testInventoryNullPointer() {
+		doThrow(new NullPointerException("No Inventory Found")).when(is).getInventory(1);	
+	}
+	@Test
+	void testInventoryType() {
+		when(is.getInventoryType("food")).thenReturn(inv);
+		assertSame(inv, is.getInventoryType("food"));
+	}
+	@Test
+	void testInventoryTypeNull() {
+		doThrow(new NullPointerException()).when(is).getInventoryType("foods");
+	}
+	@Test
+	void testInventoryUpdateInventory() {
+		Inventory inv1=new  Inventory("New Inventory For Electronics","2211","Electronics","Home");
+		when(is.updateInventory(inv)).thenReturn(inv1);
+		assertSame(is.updateInventory(inv), inv1);
+	}
+	@Test
+	void testInventoryUpadet() {
+		Inventory inv1=new  Inventory("New Inventory For Electronics","2211","Electronics","Home");
+		assertNotSame(inv, inv1);	
+	}
+	@Test
+	void testPaymentService() {
+		when(ps.savePayment(pay)).thenReturn(pay);
+		assertSame(ps.savePayment(pay), pay);
+	}
+	@Test
+	void testPaymentId() {
+		when(ps.getPayment(0)).thenReturn(pay);
+		assertSame(ps.getPayment(0), pay);
+	}
+	@Test
+	void testPaymentNull() {
+		doThrow(new  NullPointerException()).when(ps).getPayment(22);
+	}
+	@Test
+	void testRoleSave() {
+		when(rs.saveRepository(r)).thenReturn(r);
+		assertSame(rs.saveRepository(r), r);
+	}
+	@Test
+	void testRoleGetById() {
+		when(rs.getRole(1)).thenReturn(r);
+		assertEquals(rs.getRole(1), r);
+	}
+	@Test
+	void testRoleNull() {
+		doThrow(new NullPointerException()).when(rs).getRole(0);
+	}
+	@Test
+	void testStock() {
+		when(ss.saveStock(s)).thenReturn(s);
+		assertSame(ss.saveStock(s), s);
+	}
+	@Test
+	void testStockByID() {
+		when(ss.getStock(0)).thenReturn(s);
+		assertEquals(ss.getStock(0), s);
+	}
+	@Test
+	void testStocknull() {
+		doThrow(new NullPointerException()).when(ss).getStock(0);
+	}
+	
+}

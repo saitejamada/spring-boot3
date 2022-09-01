@@ -1,0 +1,118 @@
+package com.twitter.controller;
+
+
+import java.util.List;
+import javax.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.twitter.model.Crediantails;
+import com.twitter.model.Posts;
+import com.twitter.model.User_twitter;
+import com.twitter.service.TwitterService;
+
+@Controller
+public class TwitterController {
+	
+	@Autowired
+	TwitterService ts;
+	
+	@PostConstruct
+	void postConstruct() {
+		Crediantails c=new Crediantails("saiteja","sai");
+		Crediantails c1=new Crediantails("sairam","sai");
+		ts.saveCrediantails(c);ts.saveCrediantails(c1);
+		Posts p=new Posts(c,"Jhonny Wins #jhonnydepp");
+		Posts p1=new Posts(c,"Love is a war");
+		Posts p2=new Posts(c1,"I Love PSPk #PSPK");
+		Posts p3=new Posts(c1,"Vampire daires");
+		ts.savePosts(p1);
+		ts.savePosts(p);
+		ts.savePosts(p2);
+		ts.savePosts(p3);
+		List<Posts> list1=ts.getPosts(c);
+		List<Posts> list2=ts.getPosts(c1);
+		System.out.println(list1);
+		System.out.println(list2);
+		User_twitter u=new User_twitter(c,list1,123,22112,12);
+		ts.saveDetails(u);
+				
+	}
+	@RequestMapping("/home")
+	public String goHome(Model m)
+	{
+		List<Posts> list1=ts.getPosts(ts.getcreditails("saiteja"));
+		User_twitter u=ts.detUser(ts.getcreditails("saiteja"));
+		m.addAttribute("list", list1);
+		m.addAttribute("reg", u);
+		return "homepage";
+	}
+	@RequestMapping("user")
+	public String addUser(Model m)
+	{
+		Crediantails c1=new Crediantails();
+		m.addAttribute("reg", c1);
+		return "AddUser";
+		
+	}
+	@RequestMapping("/adduser")
+	public String validateUser(@ModelAttribute("reg") Crediantails c,Model m)
+	{
+		ts.saveCrediantails(c);
+		m.addAttribute("reg", c);
+		return "login";
+	}
+	@RequestMapping("/validateuser")
+	public String checkUser(@ModelAttribute("reg") Crediantails c,Model m)
+	{
+		List<Posts> list1=ts.getPosts(ts.getcreditails(c.getUsername()));
+		User_twitter u=ts.detUser(ts.getcreditails(c.getUsername()));
+		if(u==null) {
+			User_twitter user=new User_twitter();
+			user.setCs(c);
+			m.addAttribute("reg", user);
+			return "AddDetails";
+		}
+		else
+		{
+			m.addAttribute("list", list1);
+			m.addAttribute("reg", u);
+			return "homepage";
+		}
+		
+	}
+	@RequestMapping("/po/{username}")
+	public String goPosts( @PathVariable("username") String name ,Model m)
+	{
+		Crediantails c=ts.getcreditails(name);
+		Posts p=new Posts();
+		p.setCs(c);
+		m.addAttribute("reg", p);
+		return "AddPost";
+	}
+	@RequestMapping("/addpost")
+	public String addPosts(@ModelAttribute("reg") Posts p,Model m) {
+		ts.savePosts(p);
+		m.addAttribute("msg", "added succesfilly");
+		return "AddPost";
+	}
+	@RequestMapping("/adddetails")
+	public String saveuserDeatils(@ModelAttribute("reg") User_twitter u ,Model m) {
+		ts.saveDetails(u);
+		List<Posts> list1=ts.getPosts(ts.getcreditails(u.getCs().getUsername()));
+		User_twitter user=ts.detUser(ts.getcreditails(u.getCs().getUsername()));
+		m.addAttribute("list", list1);
+		m.addAttribute("reg", user);
+		return "homepage";
+	}
+	@RequestMapping("/login")
+	public String login(Model m) {
+		Crediantails c1=new Crediantails();
+		m.addAttribute("reg", c1);
+		return "login";
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.invertery;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.invertery.model.*;
+
+@SpringBootTest
+class InvertaryManagementApplicationTests {
+
+	Customer cust;
+	Inventory inv;
+	Payment pay;
+	Role r;
+	Stock s;
+	Supplier sup;
+	User u;
+	
+	
+	@Test
+	void contextLoads() {
+		
+	}
+
+}

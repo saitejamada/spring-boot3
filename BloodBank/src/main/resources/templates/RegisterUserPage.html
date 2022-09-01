@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/registeruser}" th:object="${user}">
+ 
+  <h1>Adding User page</h1>
+  
+	<label for="username">username</label>
+    <input type="text" th:field="*{username}" id="name" placeholder="username">
+    <br><br>
+    <label for="email">email</label>
+    <input type="text" th:field="*{email}" id="aadharnumber" placeholder="email">
+    <br><br>
+    <label for="address">address</label>
+    <input type="text" th:field="*{address}" id="aadharnumber" placeholder="address">
+    <br><br>
+    <label for="dob">date of birth</label>
+    <input type="date" th:field="*{dob}" id="aadharnumber" placeholder="dob">
+    <br><br>
+    <label for="password">password</label>
+    <input type="password" th:field="*{password}" id="aadharnumber" placeholder="password">
+   
+    <input type="hidden" th:field="*{role}" id="aadharnumber" placeholder="role_description">
+   
+    <input type="hidden" th:field="*{permission}" id="aadharnumber" placeholder="permission">
+   
+    <input type="hidden" th:field="*{order}" id="aadharnumber" placeholder="permission">
+    
+      <input type="submit" value="Next">  
+   <br><br><br>
+   <p th:text="${msg}"></p>
+ </form>
+</div>
+</body>
+</html>

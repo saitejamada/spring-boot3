@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+pre{font-size: 20px;font-family:sans-serif;}
+p{font-size: 20px;font-family:sans-serif;}
+</style>
+</head>
+<body>
+<div id="super">
+<pre>
+Your Booking is done on 
+</pre>
+<p th:text="${time}"></p>
+<pre>please do donation of blood.save life.!!!
+Collect the Blood from Red Cross Gachibowli Hyderabad
+</pre>
+</div>
+</body>
+</html>

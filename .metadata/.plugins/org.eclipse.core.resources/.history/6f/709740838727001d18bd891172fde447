@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://thumbs.dreamstime.com/b/large-inventory-warehouse-goods-stock-logistic-shipping-banner-background-117615202.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+table td{padding: 3%}
+#super{height:fill;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color:hsl(95, 30%, 95%);}
+
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/addsuppiler}" th:object="${sup}">
+ 
+  <h1> New Supplier   </h1>
+  
+  <table>
+	<tr>
+	<th><label for="decription">decription</label></th>
+	<td><input type="text" th:field="*{decription}" id="name" placeholder="decription"></td>
+	</tr>
+	<tr>
+	<th><label for="stock_number">stock_number</label></th>
+	<td><input type="text" th:field="*{stock_number}" id="name" placeholder="stock_number"></td>
+	</tr>
+	<tr>
+	<th><label for="type">type</label></th>
+	<td><input type="text" th:field="*{type}" id="name" placeholder="type"></td>
+	</tr>
+	
+	<tr>
+	<th><label for="items">items</label></th>
+	<td><input type="text" th:field="*{items}" id="name" placeholder="items"></td>
+	</tr>
+    <tr>
+    <th><label for="price">price</label></th>
+    <td><input type="number" th:field="*{price}" id="name" placeholder="price"></td>
+    </tr>
+    <tr></tr>
+    <tr>
+    <th></th>
+    <td><input type="submit" value="Next"> </td>
+    </tr>
+    </table>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tutorial Point</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;font-size:medium;font-family:sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%; background-color: #f1f1f1;text-align: justify;
+}
+
+.column.side img {height:200px;}
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Tutorial Point</h1>
+  <p>Education is the ability to listen to almost anything without losing your temper or your self-confidence.</p>
+</div>
+
+<div class="topnav">
+  <a th:href="@{/home}">Java</a>
+  <a th:href="@{/python}">Python</a>
+  <a href="#">JavaScript</a>
+  <a href="#">Css</a>
+  <a href="#">Bootstrap</a>
+</div>
+
+<div class="row">
+  <div class="column side">
+    <h2>Topics</h2>
+    <a th:href="@{/Introduction}">Introduction</a>
+    <br><br>
+  <a th:href="@{/datatypes}">Datatypes</a>
+  <br><br>
+  <a href="#">Keywords</a>
+  <br><br>
+  <a th:href="@{/inheritance}">Inheritance</a>
+  <br><br>
+  <a href="#">Abstraction</a>
+  <br><br>
+  <a href="#">Polymorphism</a>
+  
+  <br><br>
+  <a href="#">Servlets</a>
+  
+  <br><br>
+  <a href="#">jsp</a>
+  
+  <br><br>
+  <a href="#">String</a>
+  <br><br>
+  
+  <a href="#">File Handling</a>
+  
+   <br><br>
+  <a href="#">streams</a>
+  <br><br>
+  <a href="#">Polymorphism</a>
+  <br><br>
+  <a href="#">DataBase Access</a>
+  <br><br>
+  <a href="#">Network</a>
+  <br><br>
+  <a href="#">Multi threading</a>
+  
+  <br><br>
+  <a href="#">Gui programming</a>
+  
+  <br><br>
+  <a href="#">Sample Programs</a>
+  
+  <br><br>
+  <a href="#">Quick Guide</a>
+  
+  <br><br>
+  <a href="#">Tools</a>
+  
+  <br><br>
+  <a href="#">Community</a>
+  
+  <br><br>
+  <a href="#">Discussion</a>
+  
+  <br><br>
+  <a href="#">Mock</a>
+  
+  <br><br>
+  <a href="#">Books</a>
+  
+  
+  <br>
+  <p>more</p>
+  </div>
+  
+  <div class="column middle">
+    <h2>What is java ?</h2>
+    <p>Java is a programming language and a platform. Java is a high level, robust, object-oriented and secure programming language.
+Java was developed by Sun Microsystems (which is now the subsidiary of Oracle) in the year 1995. James Gosling is known as the father of Java. Before Java, its name was Oak. Since Oak was already a registered company, so James Gosling and his team changed the name from Oak to Java.
+Platform: Any hardware or software environment in which a program runs, is known as a platform. Since Java has a runtime environment (JRE) and API, it is called a platform. .</p>
+    <h2>Sample Program</h2>
+    <p>class Simple<br>
+    {  <br>
+    public static void main(String args[])<br>
+    {  <br>
+     System.out.println("Hello Java");<br>  
+    }  <br>
+}  
+</p>
+<h2>Java Platforms / Editions</h2>
+<p>There are 4 platforms or editions of Java:
+<br>
+1) Java SE (Java Standard Edition)
+<br>
+It is a Java programming platform. It includes Java programming APIs such as java.lang, java.io, java.net, java.util, java.sql, java.math etc. It includes core topics like OOPs, String, Regex, Exception, Inner classes, Multithreading, I/O Stream, Networking, AWT, Swing, Reflection, Collection, etc.
+<br>
+2) Java EE (Java Enterprise Edition)
+<br>
+It is an enterprise platform that is mainly used to develop web and enterprise applications. It is built on top of the Java SE platform. It includes topics like Servlet, JSP, Web Services, EJB, JPA, etc.
+<br>
+3) Java ME (Java Micro Edition)
+<br>
+It is a micro platform that is dedicated to mobile applications.
+<br>
+4) JavaFX
+<br>
+It is used to develop rich internet applications. It uses a lightweight user interface API.</p>
+  
+  <iframe width="400" height="300" src="https://www.youtube.com/embed/DcQPtlFlgzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+  
+  </div>
+   
+  <div class="column side">
+    <h2>Adds</h2>
+    <img alt="" th:src="@{/img/java-training.png}">
+    <br><br>
+    <img alt="" th:src="@{/img/add1.webp}">
+    <img alt="" th:src="@{/img/facebook-ad-example.jpg}">
+    
+  </div>
+</div>
+
+<div class="footer">
+  <h4>Copy Rights Reserved @ 2020 </h4>
+</div>
+  
+</body>
+</html>
+
+

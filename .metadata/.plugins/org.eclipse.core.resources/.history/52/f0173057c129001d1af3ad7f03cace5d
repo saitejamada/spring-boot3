@@ -1,0 +1,32 @@
+package com.invertery;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.invertery.model.*;
+
+@SpringBootTest
+class InvertaryManagementApplicationTests {
+
+	Customer cust;
+	Inventory inv;
+	Payment pay;
+	Role r;
+	Stock s;
+	Supplier sup;
+	User u;
+	
+	
+	@Test
+	void contextLoads() {
+		
+	}
+	@Test
+	void testCustomer() {
+		cust=new Customer("sai", "98798798", "sai@abc.com", "sai@19", "iugaid78", "jbvj");
+		assertTrue(cust.getName().equals("sai"));
+	}
+
+}

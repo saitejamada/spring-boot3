@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: navy;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+pre{font-size: 20px;font-family:sans-serif;}
+</style>
+</head>
+<body>
+<div>
+<img src="https://www.starhealth.in/blog/wp-content/uploads/2022/03/Blood-donation.jpg" style="height:400px;">
+</div>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a  href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a th:href="@{/donormain}">Donate Blood</a>
+  <a th:href="@{/patient}">Request Blood</a>
+  <a th:href="@{log}">Logout</a>
+  
+  <a th:text="${name.username}" style="float:right;"></a>
+</div>
+
+<div>
+<pre>
+Blood donation  
+Transfusion of blood takes place every day around the world. Donating blood is good for health. The donors should check if they are in good health to eliminate possible health issues after blood transfusion to those who use it.  
+
+Blood donation usually takes place in a clinic, blood bank, or hospital.  
+
+In order to donate blood, a person needs to
+
+Register themselves  
+Undergo examination/Medical history
+Process of donation
+Refreshment
+A person needs to be at least 16 years old to donate blood. A person should have a minimum weight and must be in good health to donate blood.  
+
+Certain blood banks may have more requirements.  
+
+Registration is when a person in the blood bank will sign for an appointment and collect general information of the donor like name and contact number.  
+
+Before the donation process begins, a medical examiner would ask the donor a few important questions regarding health and lifestyle. This is done to get an idea of the overall health of the donor.  
+
+A blood test is done to check for various diseases in the blood. If there are no issues with the blood samples, then the donor is free to donate blood.  </pre>
+<img src="https://www.chestercountyhospital.org/-/media/images/chestercounty/blog/2022/january/220119cch_3benefitsofdonatingbloodyouprobablydidntknow_1.ashx?la=en" style="width:720px;float:left;">
+<img src="https://www.starhealth.in/blog/wp-content/uploads/2022/05/BENEFITS-OF-BLOOD-DONATION.jpg" style="height:400px;float:right;">
+</div>
+<div>
+<img src="https://www.hema-quebec.qc.ca/userfiles/image/photos/sang/anglais/Compatibilite-ang.jpg">
+</div>
+</body>
+</html>

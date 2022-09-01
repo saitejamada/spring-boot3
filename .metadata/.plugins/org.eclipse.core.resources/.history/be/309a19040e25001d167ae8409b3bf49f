@@ -1,0 +1,19 @@
+package com.invertery.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.invertery.model.Inventory;
+import com.invertery.repository.InventoryRepository;
+
+@Service
+public class InventoryService  {
+	
+	@Autowired
+	InventoryRepository ir;
+	
+	public void saveInventory(Inventory i) {
+		ir.save(i);
+	}
+
+}

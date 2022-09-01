@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	body{background-color: lightgrey}
+*{font-family: cursive;font-size:15px}
+#super{height:fill;color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+input {margin:7px;border-radius:5px}
+#btn {margin-left: 39%}
+h1{text-align: center}
+span {
+color: red;
+font-style: italic;
+}
+</style>
+</head>
+<body>
+	<div id="super" align="center">
+	<h1>New User Registerion form</h1>
+	
+		<form action="#" th:action="@{/save}"  th:object="${credential}">
+		<div>
+			<label>UserName:</label>
+			<input type="text" th:field="*{userName}"/><br/>
+			<span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Username error</span>
+		</div>
+		<div>
+			<label>Password:</label>
+			<input type="password" th:field="*{password}" />
+		</div>
+		<div>
+			<label>Role:</label>
+			<select th:field="*{role}">
+    		<option th:value="ROLE_NORMAL" th:text="Normal"></option>
+    		<option th:value="ROLE_SUPERADMIN" th:text="SuperAdmin"></option>
+    		<option th:value="ROLE_ADMIN" th:text="Admin"></option>
+			</select>
+		</div>
+		
+		
+		<input type="submit" value="submit">
+		<input type="reset" value="Clear">
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+pre{font-size: 20px;font-family:sans-serif;}
+</style>
+</head>
+<body>
+<div id="super">
+<h1>hello </h1>
+<h2 th:text="${don.name}"></h2>
+<pre>
+Your appointment is fixed on Following Date and Hospital
+</pre>
+<time datetime="YYYY-MM-DDThh:mm:ssTZD">2022-07-30 11:30</time>
+<pre>
+apollo hosipatals jubllie hills hyderabad
+</pre>
+<a href="https://www.google.com/maps/dir/18.7011228,78.122233/Apollo+Hospitals+Jubilee+Hills+Hyderabad-+Best+Hospital,+Rd+Number+72,+opposite+Bharatiya+Vidya+Bhavan+School,+Film+Nagar,+Hyderabad,+Telangana+500033/@18.0568892,77.745929,9z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb976634652a37:0xeb778fba80ddd5bf!2m2!1d78.4124137!2d17.4149302?hl=en">location</a>
+
+</div>
+</body>
+</html>

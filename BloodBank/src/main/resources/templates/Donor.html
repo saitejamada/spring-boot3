@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body{background-image: url("https://vistapointe.net/images/blood-donation-wallpaper-10.jpg");
+background-repeat: no-repeat;background-size: cover;
+}
+#super{height:fill;background-color:white;width:550px;margin-top:10%;margin-left:30%;border-radius: 5px;background-color: silver;}
+</style>
+</head>
+<body>
+<div id="super">
+<form action="#" th:action="@{/adddonor}" th:object="${don}">
+ 
+  <h1>Adding Donor page</h1>
+  
+	<label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name">
+    <br><br>
+    <label for="mobileno">Mobile number</label>
+    <input type="text" th:field="*{mobileno}" id="aadharnumber" placeholder="mobileno">
+    <br><br>
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="aadharnumber" placeholder="email">
+    <br><br>
+    <label for="address">Address</label>
+    <input type="text" th:field="*{address}" id="aadharnumber" placeholder="address">
+    <br><br>
+    <input type="hidden" th:field="*{user}">
+   <input type="submit" value="Next">  
+   <br><br><br>
+   <p th:text="${msg}"></p>
+ </form>
+
+</div>
+</body>
+</html>
